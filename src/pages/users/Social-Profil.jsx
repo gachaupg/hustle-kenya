@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import {
     MDBCol,
     MDBContainer,
@@ -56,10 +56,10 @@ const SocialProfil = () => {
         <MDBCol>
           <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
             <MDBBreadcrumbItem>
-              <a href="/">Home</a>
+              <Link  to="/">Home</Link>
             </MDBBreadcrumbItem>
             <MDBBreadcrumbItem>
-              <a href="/social">All Users</a>
+              <Link to="/social">All Users</Link>
             </MDBBreadcrumbItem>
           
             <MDBBreadcrumbItem active>User Profile</MDBBreadcrumbItem>

@@ -18,6 +18,8 @@ import {
 } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function ProfilePage() {
   const { user } = useSelector((state) => ({ ...state.auth }));
@@ -83,10 +85,10 @@ export default function ProfilePage() {
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
               <MDBBreadcrumbItem>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </MDBBreadcrumbItem>
               <MDBBreadcrumbItem>
-                <a href="/social">All Users</a>
+                <Link to="/social">All Users</Link>
               </MDBBreadcrumbItem>
               {/* <MDBBreadcrumbItem> */}
                 {/* <a href={`/users-dashboard/${user?.result?.name}`}>Dashboard</a> */}
@@ -113,7 +115,7 @@ export default function ProfilePage() {
                 style={{ color: "black" }}
                 href={`https://wa.me/${user?.result?.phone}`}
               >
-                  <MDBBtn outline className="ms-1">
+                  <MDBBtn outline className="mt-3 ms-1">
                     Message
                   </MDBBtn>
                   </a>
@@ -128,7 +130,7 @@ export default function ProfilePage() {
                     <MDBListGroup flush className="rounded-3">
                       <MDBListGroupItem className="d-flex  align-items-center p-3">
                         <MDBIcon fas icon="globe fa-lg text-warning" />
-                        <MDBCardText>Latest Item Posted</MDBCardText>
+                        <MDBCardText className='text-danger'>Latest Item Posted</MDBCardText>
                       </MDBListGroupItem>
                       <MDBListGroupItem className="d-flex  align-items-center p-3">
                         <MDBIcon
@@ -227,6 +229,18 @@ export default function ProfilePage() {
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
+                <hr />
+                <MDBRow>
+                  
+                  <MDBCol  sm="9">
+                    <Link to='/register'>
+                    <Button style={{background:'blue',
+                  color:'white'}}>Update Profile</Button>
+                    </Link>
+                    
+                  </MDBCol>
+                </MDBRow>
+                
               </MDBCardBody>
             </MDBCard>
 
@@ -236,7 +250,7 @@ export default function ProfilePage() {
                   <MDBCardBody>
                     <MDBCardText className="mb-4">
                       <span className="text-primary font-italic me-1">
-                        assigment
+                        Assigment
                       </span>{" "}
                       Project Status
                     </MDBCardText>
@@ -254,15 +268,6 @@ export default function ProfilePage() {
                       />
                     </MDBProgress>
 
-                    <MDBCardText
-                      className="mt-4 mb-1"
-                      style={{ fontSize: ".77rem" }}
-                    >
-                      Follwers
-                    </MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={7} valuemin={0} valuemax={10000} />
-                    </MDBProgress>
 
                     <MDBCardText
                       className="mt-4 mb-1"

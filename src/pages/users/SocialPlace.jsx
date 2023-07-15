@@ -25,8 +25,11 @@ const SocialPlace = () => {
             res.data.sort(compare);
             // const result = res.data.filter((_, index) => index
             setUsers(res.data);
+            setLoading(false)
           } catch (error) {
             console.log(error);
+            setLoading(false)
+
           }
         }
         fetchData();
@@ -53,12 +56,12 @@ const SocialPlace = () => {
     <h2 style={{textAlign:'center'}}> Social Place</h2>
     
 
-    <div class="row p-5 row-cols-1 row-cols-md-3 g-4">
+    <div class="row p-5 row-cols-1 row-cols-md-4 g-4">
         {users.map((user)=>{
 return(
     
     <div className="col ">
-    <div className="card h-30">
+    <div className="cardss">
     <Link to={`/social-profile/${user._id}`}>
       <img src={user.img} class="card-img-top" alt="Skyscrapers"/>
  

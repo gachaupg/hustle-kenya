@@ -94,7 +94,7 @@ console.log(todos);
         const res = await axios.get(
           `https://hustle-kenya-7azi.onrender.com/mpesa/stkPush`
         );
-        res.data.sort(compare);
+        // res.data.sort(compare);
         // const result = res.data.filter((_, index) => index < 30);
         setUsers(res.data);
         setLoading(false)
@@ -146,7 +146,7 @@ console.log(todos);
         </tr>
       </thead>
       <tbody>
-        {todos.map((item, index) => (
+        {users.map((item, index) => (
           <tr>
 
             <>

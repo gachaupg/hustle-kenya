@@ -20,6 +20,8 @@ import CallIcon from "@mui/icons-material/Call";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from "../redux/features/authSlice";
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+
 const pages = ["Products", "Pricing", "Blog"];
 const settings = [
   { one: "Profile" },
@@ -104,11 +106,11 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
+          <Link
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            to="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -120,7 +122,7 @@ function ResponsiveAppBar() {
             }}
           >
             LOGO
-          </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -198,6 +200,7 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
+            
           </Box>
 
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -241,8 +244,104 @@ function ResponsiveAppBar() {
                 <CallIcon />
               </a>
             </Typography>
+            <div style={{marginLeft:'2rem'}}>
+            <MDBDropdown>
+                    <div></div>
+                    <MDBDropdownToggle style={{ width: "100%" }}>
+                      Filter By Categories
+                    </MDBDropdownToggle>
+                    <MDBDropdownMenu style={{ width: "38%" }}>
+                      <ul>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/beauty"
+                        >
+                          <li>Beauty Equipments</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/cars"
+                        >
+                          <li>Cars, Bikes & Spares</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/clothing"
+                        >
+                          <li>Fashion & Clothings</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/electronics"
+                        >
+                          <li>Electronics Equipments</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/furnatures"
+                        >
+                          <li>Furnatures & Wood Work</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/houses"
+                        >
+                          <li>Buildings & Homes</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/laptops"
+                        >
+                          <li>Laptops</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/phones"
+                        >
+                          <li>Phones</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/plots"
+                        >
+                          <li>Plots & Lands</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/shoes"
+                        >
+                          <li>Shoes</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/technology"
+                        >
+                          <li>Tech Gadgets</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/beauty"
+                        >
+                          <li>Beauty</li>
+                        </Link>
+                        
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/vacant"
+                        >
+                          <li>House for Rent</li>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none", color: "magenta" }}
+                          to="/others"
+                        >
+                          <li>Others</li>
+                        </Link>
+                      </ul>
+                    </MDBDropdownMenu>
+                  </MDBDropdown>
+          </div>
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton

@@ -24,6 +24,25 @@ import SocialProfil from "./pages/users/Social-Profil";
 import Protected from "./services/PrivateRoute";
 import Mpesa from "./pages/mpesa/Mpesa";
 import Transactions from "./pages/Admin/Transactions";
+import Footer from "./components/Footer";
+import AllProductsPage from "./pages/products/AllProducts";
+import Middleware from "./Middleware";
+import NoPayments from "./pages/mpesa/NoPayments";
+import Beauty from "./pages/categories/Beauty";
+import Cars from "./pages/categories/Cars";
+import Clothing from "./pages/categories/Clothing";
+import Electronics from "./pages/categories/Electronics";
+import Furnatures from "./pages/categories/Furnatures";
+import Houses from "./pages/categories/Houses";
+import Laptops from "./pages/categories/Laptops";
+import Others from "./pages/categories/Others";
+import Phones from "./pages/categories/Phones";
+import Plots from "./pages/categories/Plots";
+import Shoes from "./pages/categories/Shoes";
+import Technology from "./pages/categories/Technology";
+import VacantHouse from "./pages/categories/VacantHouse";
+import Control from "./Control";
+
 function App() {
   const dispatch = useDispatch();
   const [data, setDate] = useState([]);
@@ -75,7 +94,26 @@ function App() {
           {/* <Route path="/users" element={<Users />} /> */}
           <Route path="/all-products" element={<AllProducts />} />
           <Route path="/all-transactions" element={<Transactions />} />
+          <Route path="/all-products-page" element={<AllProductsPage />} />
+          <Route path="/middleware" element={<Middleware />} />
+          <Route path="/no-payment" element={<NoPayments />} />
+          {/* categories */}
+          <Route path="/beauty" element={<Beauty />} />
+          <Route path="/cars" element={<Cars />} />
+          <Route path="/clothing" element={<Clothing />} />
+          <Route path="/electronics" element={<Electronics />} />
+          <Route path="/furnatures" element={<Furnatures />} />
+          <Route path="/Houses" element={<Houses />} />
+          <Route path="/laptops" element={<Laptops />} />
+          <Route path="/others" element={<Others />} />
+          <Route path="/phones" element={<Phones />} />
+          <Route path="/plots" element={<Plots />} />
+          <Route path="/shoes" element={<Shoes />} />
+          <Route path="/technology" element={<Technology />} />
+          <Route path="/vacant" element={<VacantHouse />} />
+          <Route path="/control" element={<Control/>}/>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
